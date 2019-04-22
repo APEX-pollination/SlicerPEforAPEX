@@ -20,13 +20,13 @@ void FillHoneycomb::_fill_surface_single(
         it_m = this->cache.insert(it_m, std::pair<CacheID, CacheData>(cache_id, CacheData()));
         CacheData &m = it_m->second;
         coord_t min_spacing = scale_(this->spacing);
-        m.distance = min_spacing / params.density;
+        m.distance = params.density / 10;
         m.hex_side = m.distance / (sqrt(3)/2);
         m.hex_width = m.distance * 2; // $m->{hex_width} == $m->{hex_side} * sqrt(3);
         coord_t hex_height = m.hex_side * 2;
         m.pattern_height = hex_height + m.hex_side;
         m.y_short = m.distance * sqrt(3)/3;
-        m.x_offset = min_spacing / 2;
+        m.x_offset = min_spacing / 4;
         m.y_offset = m.x_offset * sqrt(3)/3;
         m.hex_center = Point(m.hex_width/2, m.hex_side);
     }
