@@ -20,7 +20,7 @@ void FillHoneycomb::_fill_surface_single(
         it_m = this->cache.insert(it_m, std::pair<CacheID, CacheData>(cache_id, CacheData()));
         CacheData &m = it_m->second;
         coord_t min_spacing = (scale_(this->spacing))/4;
-        m.distance = min_spacing * 14 / params.density;
+        m.distance = min_spacing * 13.5 / params.density;
         m.hex_side = m.distance / (sqrt(3)/2);
         m.hex_width = m.distance * 2; // $m->{hex_width} == $m->{hex_side} * sqrt(3);
         coord_t hex_height = m.hex_side * 2;
@@ -44,10 +44,11 @@ void FillHoneycomb::_fill_surface_single(
             bb_polygon.rotate(direction.first, m.hex_center);
             bounding_box = bb_polygon.bounding_box();
             
+            // SUPPRESS bounding box alignment with world coordinate system
             // extend bounding box so that our pattern will be aligned with other layers
             // $bounding_box->[X1] and [Y1] represent the displacement between new bounding box offset and old one
             // The infill is not aligned to the object bounding box, but to a world coordinate system. Supposedly good enough.
-            bounding_box.merge(_align_to_grid(bounding_box.min, Point(m.hex_width, m.pattern_height)));
+            // bounding_box.merge(_align_to_grid(bounding_box.min, Point(m.hex_width, m.pattern_height)));
         }
 
         coord_t x = bounding_box.min(0);
