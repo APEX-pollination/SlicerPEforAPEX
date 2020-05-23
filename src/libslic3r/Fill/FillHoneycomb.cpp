@@ -40,9 +40,9 @@ void FillHoneycomb::_fill_surface_single(
         BoundingBox bounding_box = expolygon.contour.bounding_box();
         {
             // rotate bounding box according to infill direction
-            Polygon bb_polygon = bounding_box.polygon();
-            bb_polygon.rotate(direction.first, m.hex_center);
-            bounding_box = bb_polygon.bounding_box();
+            // Polygon bb_polygon = bounding_box.polygon();
+            // bb_polygon.rotate(direction.first, m.hex_center);
+            // bounding_box = bb_polygon.bounding_box();
             
             // SUPPRESS bounding box alignment with world coordinate system
             // extend bounding box so that our pattern will be aligned with other layers
