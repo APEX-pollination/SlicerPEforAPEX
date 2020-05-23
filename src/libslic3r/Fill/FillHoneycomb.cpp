@@ -69,7 +69,7 @@ void FillHoneycomb::_fill_surface_single(
                 std::swap(ax[0], ax[1]); // draw symmetrical pattern
                 x += m.distance;
             }
-            p.rotate(-direction.first, m.hex_center);
+            // p.rotate(-direction.first, m.hex_center);
             polygons.push_back(p);
         }
     }
