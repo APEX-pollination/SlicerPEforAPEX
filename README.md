@@ -1,7 +1,9 @@
 
 ![Slic3rPE logo](/resources/icons/Slic3r.png?raw=true)
 
-# Slic3r Prusa Edition (modified for APEX)
+# Slic3r Prusa Edition (modified for use in APEX pollination's 3D-printing factory)
+
+### This repository contains a slight modification of PRUSA SlicerPE. These modifications include printing profiles for CREALITY CR10 max printers, and a modified Honeycomb fill pattern to print foundation sheets for honeybees.
 
 Prebuilt Windows, OSX and Linux binaries are available through the [git releases page](https://github.com/prusa3d/Slic3r/releases).
 
